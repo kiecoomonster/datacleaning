@@ -12,6 +12,7 @@ Do not rename or edit any of the files.
 
 
 ##Files/Documents
+
 The codebook.md contains the variables used and their corresponding description and any other relevant information used in the process.
 
 run_analysis.R is the main script executed to get and clean the data. It is recommended that the script be run in rStudio but on a per step basis. 
