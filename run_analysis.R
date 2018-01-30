@@ -20,8 +20,8 @@ feature <- rbind(trainFeature, testFeature)
 
 featureInfo <- read.table("UCI HAR Dataset/features.txt")
 activityLabel <- read.table("UCI HAR Dataset/activity_labels.txt", header = FALSE)
-colnames(feature) <- t(featureInfo[2])
 
+colnames(feature) <- t(featureInfo[2])
 colnames(activity) <- "Activity"
 colnames(subject) <- "Subject"
 mergedData <- cbind(feature,activity,subject)
@@ -44,7 +44,7 @@ newDataset$Activity <- as.factor(newDataset$Activity)
 
 
 #4 Appropriately label the data set with descriptive variable names.
-
+names(newDataset)
 names(newDataset)<-gsub("Acc", "Accelerometer", names(newDataset))
 names(newDataset)<-gsub("Gyro", "Gyroscope", names(newDataset))
 names(newDataset)<-gsub("BodyBody", "Body", names(newDataset))
