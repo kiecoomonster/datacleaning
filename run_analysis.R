@@ -60,10 +60,10 @@ names(newDataset)<-gsub("gravity", "Gravity", names(newDataset))
 names(newDataset)
 
 
-#5 From the data set in step 4, create a second, independent tidy data set with the average of each variable for each activity and each subject.
+#5 From the data set in step 4, create a second, independent tidy data set with the average of each variable 
+#for each activity and each subject.
 
 newDataset$Subject <- as.factor(newDataset$Subject)
-#library(data.table)
 newDataset <- data.table(newDataset)
 tidyDataset <- aggregate(. ~Subject + Activity, newDataset, mean)
 tidyDataset <- tidyDataset[order(tidyDataset$Subject,tidyDataset$Activity),]
